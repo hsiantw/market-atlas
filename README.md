@@ -4,6 +4,10 @@ The main pipeline is `market_data.py`. Daily history is stored in **data/market.
 
 ## Web interface
 
+Public website: **https://hsiantw.github.io/market-atlas/**. Repository: **https://github.com/hsiantw/market-atlas**.
+
+The hosted website stays available when this computer is off. The daily 09:00 local collector uploads fresh snapshots when this computer is on, connected, and logged in. See [HOSTING.md](HOSTING.md) for publishing details.
+
 Open **http://127.0.0.1:8765** while the dashboard is running. To launch it again:
 
 ```powershell
