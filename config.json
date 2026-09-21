@@ -1,0 +1,8 @@
+{
+  "sp500": true,
+  "symbols": ["AAPL", "2330.TW", "BTC-USD", "ETH-USD"],
+  "overlap_days": 14,
+  "full_refresh_days": 30,
+  "request_pause_seconds": 1.0,
+  "attempts": 3
+}

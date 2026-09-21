@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Market Atlas · Daily market explorer</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<aside>
+  <a class="brand" href="/"><span class="logo">M<span>↗</span></span> MARKET ATLAS</a>
+  <div class="sidebar-heading">YOUR MARKET LIBRARY</div>
+  <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search company or symbol" aria-label="Search company or symbol"><kbd>/</kbd></label>
+  <div class="filters" id="filters"><button class="active" data-filter="All">All assets</button><button data-filter="Stocks">Stocks</button><button data-filter="Crypto">Crypto</button><button data-filter="Saved">★ Saved</button></div>
+  <div class="list-heading"><span id="count">Loading assets…</span><span>LAST CLOSE</span></div>
+  <div id="assets" class="assets" aria-label="Available assets"></div>
+  <div class="sidebar-footer"><span class="status-dot"></span> Local dataset <span id="libraryCount"></span><button id="refresh" title="Reload local data" aria-label="Reload local data">↻</button></div>
+</aside>
+<main>
+  <header><div><span class="eyebrow">WORKSPACE / MARKET EXPLORER</span><h1>A clearer view of the market.</h1><p>Explore daily prices. Find your next question.</p></div><div class="dataset-badge"><span class="status-dot"></span> DAILY HISTORY</div></header>
+  <div id="error" class="error" role="alert" hidden></div>
+  <section class="overview">
+    <div class="asset-title"><div id="assetIcon" class="asset-icon">A</div><div><div class="title-line"><h2 id="symbol">—</h2><span id="exchange" class="pill"></span></div><div id="name" class="muted">Select an asset to explore</div></div><button id="save" class="secondary save" aria-pressed="false">☆ Save asset</button></div>
+    <div class="quote"><span id="price">—</span><span id="currency" class="muted"></span><span id="change" class="change"></span></div>
+    <div id="asof" class="muted quote-note">Last completed daily bar · Yahoo Finance</div>
+  </section>
+  <section class="chart-panel">
+    <div class="chart-top"><div><h3>Price history</h3><span id="rangeSummary" class="muted">Loading daily records…</span></div><label class="metric-label">Price field<select id="metric"><option value="close">Close</option><option value="adjusted_close">Adjusted close</option></select></label></div>
+    <div class="chart-controls"><div class="periods" id="periods"><button data-period="1M">1M</button><button data-period="6M">6M</button><button class="active" data-period="1Y">1Y</button><button data-period="5Y">5Y</button><button data-period="MAX">MAX</button></div><div class="dates"><input type="date" id="start" aria-label="Start date"><span>—</span><input type="date" id="end" aria-label="End date"><button id="apply" class="secondary">Apply</button></div></div>
+    <div class="canvas-wrap"><canvas id="chart" aria-label="Daily price chart; exact records are available in the table below" role="img"></canvas><div id="tooltip" class="tooltip" hidden></div><div id="chartEmpty" class="chart-empty" hidden>No prices in this date range.</div></div>
+    <div class="chart-caption"><span><i></i> <span id="legend">Daily close</span></span><span>Hover to inspect · Prices in <span id="chartCurrency">USD</span></span></div>
+  </section>
+  <section class="stats"><div><span>PERIOD RETURN</span><strong id="return">—</strong></div><div><span>HIGHEST CLOSE</span><strong id="high">—</strong></div><div><span>LOWEST CLOSE</span><strong id="low">—</strong></div><div><span>DAILY RECORDS</span><strong id="records">—</strong></div></section>
+  <section class="table-panel"><div class="table-top"><div><h3>Daily records</h3><span class="muted">Latest first · selected date range</span></div><button id="download" class="secondary">↓ Export CSV</button></div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Close</th><th>Adj. close</th><th>Volume</th></tr></thead><tbody id="rows"></tbody></table></div><div class="pagination"><span id="pageInfo" class="muted"></span><div><button id="prev" class="secondary">← Previous</button><button id="next" class="secondary">Next →</button></div></div></section>
+  <footer>Yahoo Finance · Daily updates scheduled for 09:00 local time while logged in.<br>Historical prices may be adjusted by the provider. This view displays stored data, not live quotes.</footer>
+</main><script src="/app.js"></script></body></html>
