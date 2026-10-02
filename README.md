@@ -1,3 +1,13 @@
+# Website retired: now part of QuantStack
+
+The chart workspace and market-data pipeline have been consolidated into [QuantStack](https://github.com/hsiantw/QuantStack).
+
+Use the single application at **https://quantstack.onrender.com/** and open **Market workspace** for charts, screening, strategy testing, and Markov analysis.
+
+The former GitHub Pages website and its publishing workflow are disabled. Market data and ongoing development now belong to QuantStack. The source history below is preserved.
+
+---
+
 ﻿# Stock and crypto datasets
 
 The main pipeline is `market_data.py`. Daily history is stored in **data/market.sqlite** and exported to **data/exports/** as one CSV per symbol. No editor extensions are required.
